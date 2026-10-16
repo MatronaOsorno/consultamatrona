@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navegador eHealth - Salud Sexual y Reproductiva</title>
+  <title>Consulta Matrona - Salud Sexual y Reproductiva</title>
   
   <!-- FontAwesome para Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -51,7 +51,7 @@
     }
 
     header h1 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 700;
     }
 
@@ -86,7 +86,7 @@
     /* CONTENEDOR PRINCIPAL */
     main {
       flex: 1;
-      max-width: 800px;
+      max-width: 650px; /* Ancho optimizado para formato lista vertical */
       width: 100%;
       margin: 0 auto;
       padding: 1.5rem 1rem;
@@ -104,17 +104,12 @@
       opacity: 1;
     }
 
-    /* MENÚ DE BOTONES */
+    /* MENÚ DE BOTONES - LISTA VERTICAL CONTINUA */
     .menu-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
-    }
-
-    @media (min-width: 600px) {
-      .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      width: 100%;
     }
 
     .menu-card {
@@ -129,10 +124,11 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       text-decoration: none;
+      width: 100%;
     }
 
     .menu-card:hover, .menu-card:active {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: 0 6px 15px var(--shadow-color);
       border-color: var(--rosa-mexicano);
     }
@@ -304,12 +300,12 @@
 
   <!-- ENCABEZADO PRINCIPAL -->
   <header>
-    <h1>Navegador eHealth</h1>
+    <h1>Consulta Matrona</h1>
     <p>Salud Sexual, Reproductiva y Materna - Red de Salud APS</p>
   </header>
 
   <main>
-    <!-- VISTA 0: MENÚ PRINCIPAL (10 OPCIONES) -->
+    <!-- VISTA 0: MENÚ PRINCIPAL (10 OPCIONES EN LISTA CONTINUA) -->
     <div id="view-menu" class="page-view active">
       <div class="menu-grid">
 
@@ -645,7 +641,7 @@
               </tr>
               <tr>
                 <td><strong>Detección de VPH</strong></td>
-                <td> Mujeres / personas con útero de 30 a 64 años</td>
+                <td>Mujeres / personas con útero de 30 a 64 años</td>
                 <td><strong>Cada 5 años</strong> en esquemas primarios de tamizaje.</td>
               </tr>
               <tr>
@@ -658,10 +654,11 @@
                 <td>20 a 64 años</td>
                 <td><strong>Anual</strong> (evalúa presión, glicemia, colesterol y peso).</td>
               </tr>
-               <tr>
+              <tr>
                 <td><strong>Examen del Adolescente</strong></td>
                 <td>10 a 20 años</td>
                 <td><strong>Anual</strong> (evalúa presión, altura, peso, imc y cambios del cuerpo).</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -671,7 +668,7 @@
   </main>
 
   <footer>
-    <p>Atención Primaria de Salud — Estrategia Digital eHealth</p>
+    <p>Internas Obstetricia y Puericultura, Universidad de Los Lagos 2026</p>
   </footer>
 
   <!-- LÓGICA DE NAVEGACIÓN INSTANTÁNEA (SPA) -->
