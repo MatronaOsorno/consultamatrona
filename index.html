@@ -251,6 +251,20 @@
       margin-bottom: 0.3rem;
     }
 
+    /* TARJETAS DE CUIDADOS */
+    .care-card {
+      background-color: #fce4ec;
+      border-left: 4px solid var(--rosa-mexicano);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .care-card h4 {
+      color: var(--rosa-mexicano-dark);
+      margin-bottom: 0.4rem;
+    }
+
     /* TABLAS RESPONSIVAS */
     .table-container {
       overflow-x: auto;
@@ -317,66 +331,66 @@
           </div>
         </div>
 
-        <!-- 3. Signos de Alarma -->
-        <div class="menu-card" onclick="navigateTo('view-alarma')">
+        <!-- 3. Signos de Alarma Embarazo -->
+        <div class="menu-card" onclick="navigateTo('view-alarma-embarazo')">
           <div class="icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
           <div class="menu-card-info">
-            <h3>Signos de Alarma Embarazo</h3>
-            <p>Cuándo acudir de urgencia a urgencias o matrona.</p>
+            <h3>Signos de Alarma en el Embarazo</h3>
+            <p>Cuándo acudir a urgencias obstétricas o matrona.</p>
           </div>
         </div>
 
-        <!-- 4. Autoexamen de Mamas -->
+        <!-- 4. Signos de Alarma Ginecológicos -->
+        <div class="menu-card" onclick="navigateTo('view-alarma-ginecologia')">
+          <div class="icon-box"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="menu-card-info">
+            <h3>Signos de Alarma Ginecológicos</h3>
+            <p>Cuándo consultar a la matrona fuera del embarazo.</p>
+          </div>
+        </div>
+
+        <!-- 5. Autoexamen de Mamas -->
         <div class="menu-card" onclick="navigateTo('view-mamas')">
           <div class="icon-box"><i class="fa-solid fa-ribbon"></i></div>
           <div class="menu-card-info">
             <h3>Autoexamen de Mamas</h3>
-            <p>Guía paso a paso para la prevención mamaria.</p>
+            <p>Guía paso a paso para la autoevaluación mamaria.</p>
           </div>
         </div>
 
-        <!-- 5. Métodos Anticonceptivos Disponibles -->
+        <!-- 6. Métodos Anticonceptivos y Efectos Adversos -->
         <div class="menu-card" onclick="navigateTo('view-metodos')">
           <div class="icon-box"><i class="fa-solid fa-pills"></i></div>
           <div class="menu-card-info">
-            <h3>Anticonceptivos en CESFAM/CECOSF</h3>
-            <p>Métodos disponibles gratuitamente en tu centro.</p>
+            <h3>Anticonceptivos en CESFAM / CECOSF</h3>
+            <p>Métodos disponibles y sus efectos secundarios comunes.</p>
           </div>
         </div>
 
-        <!-- 6. Efectos Adversos MAC -->
-        <div class="menu-card" onclick="navigateTo('view-efectos')">
-          <div class="icon-box"><i class="fa-solid fa-circle-info"></i></div>
+        <!-- 7. Cuidados Post Implante, DIU y Posparto -->
+        <div class="menu-card" onclick="navigateTo('view-cuidados')">
+          <div class="icon-box"><i class="fa-solid fa-notes-medical"></i></div>
           <div class="menu-card-info">
-            <h3>Efectos Secundarios Comunes</h3>
-            <p>Lo que debes saber sobre tus anticonceptivos.</p>
+            <h3>Cuidados y Recomendaciones</h3>
+            <p>Cuidados post-inserción DIU, implante y posparto.</p>
           </div>
         </div>
 
-        <!-- 7. Anticoncepción de Emergencia (PAE) -->
+        <!-- 8. Anticoncepción de Emergencia (PAE) -->
         <div class="menu-card" onclick="navigateTo('view-pae')">
           <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
           <div class="menu-card-info">
             <h3>Píldora del Día Después (PAE)</h3>
-            <p>Uso, plazos y cómo solicitarla en el centro.</p>
+            <p>Uso, plazos y cómo solicitarla en el centro de salud.</p>
           </div>
         </div>
 
-        <!-- 8. Prevención de ITS y Toma de PAP -->
-        <div class="menu-card" onclick="navigateTo('view-preventivo')">
-          <div class="icon-box"><i class="fa-solid fa-shield-virus"></i></div>
+        <!-- 9. ¿Cuándo consultar a la Matrona? (Preventivos MINSAL) -->
+        <div class="menu-card" onclick="navigateTo('view-consultas')">
+          <div class="icon-box"><i class="fa-solid fa-calendar-days"></i></div>
           <div class="menu-card-info">
-            <h3>Exámenes Preventivos (PAP/ITS)</h3>
-            <p>Importancia del Papanicolaou y test rápido VIH.</p>
-          </div>
-        </div>
-
-        <!-- 9. Derechos en el Nacimiento -->
-        <div class="menu-card" onclick="navigateTo('view-derechos')">
-          <div class="icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
-          <div class="menu-card-info">
-            <h3>Ley de Parto Respetado</h3>
-            <p>Tus derechos durante el trabajo de parto y nacimiento.</p>
+            <h3>¿Cuándo consultar a la Matrona?</h3>
+            <p>Tiempos y edades para PAP, VPH, Mamografía y EMPA.</p>
           </div>
         </div>
 
@@ -419,14 +433,13 @@
         <p style="font-size: 0.9rem;">Un buen acople es fundamental para evitar grietas y asegurar la nutrición de tu bebé. Revisa el siguiente video informativo:</p>
         
         <div class="video-container">
-          <!-- Reemplazar el src con el link del video institucional o YouTube deseado -->
           <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Técnicas de Lactancia" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
-    <!-- VISTA 3: SIGNOS DE ALARMA -->
-    <div id="view-alarma" class="page-view">
+    <!-- VISTA 3: SIGNOS DE ALARMA EMBARAZO -->
+    <div id="view-alarma-embarazo" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-triangle-exclamation"></i> Signos de Alarma en el Embarazo</h2>
@@ -434,32 +447,66 @@
         
         <div class="alert-card">
           <h4><i class="fa-solid fa-droplet"></i> Sangrado Vaginal</h4>
-          <p style="font-size: 0.85rem;">Cualquier pérdida de sangre por vagina, abundante o escasa, debe ser evaluada.</p>
+          <p style="font-size: 0.85rem;">Cualquier pérdida de sangre por vagina, abundante o escasa, debe ser evaluada inmediatamente.</p>
         </div>
 
         <div class="alert-card">
           <h4><i class="fa-solid fa-water"></i> Pérdida de Líquido por Vagina</h4>
-          <p style="font-size: 0.85rem;">Salida de líquido transparente o con mal olor (rotura de membranas).</p>
+          <p style="font-size: 0.85rem;">Salida de líquido transparente o con mal olor (posible rotura de membrana / bolsa de aguas).</p>
         </div>
 
         <div class="alert-card">
-          <h4><i class="fa-solid fa-head-side-virus"></i> Dolor de Cabeza Intenso u Oídos Tapados</h4>
-          <p style="font-size: 0.85rem;">Cefalea persistente, visión de luces/chispas o pitos en los oídos (zumbidos).</p>
+          <h4><i class="fa-solid fa-head-side-virus"></i> Dolor de Cabeza Intenso o Visión Borrosa</h4>
+          <p style="font-size: 0.85rem;">Cefalea persistente, ver luces/chispas o pitos en los oídos (asociado a presión alta).</p>
         </div>
 
         <div class="alert-card">
           <h4><i class="fa-solid fa-child"></i> Disminución de Movimientos Fetales</h4>
-          <p style="font-size: 0.85rem;">Si notas que tu bebé se mueve significativamente menos de lo habitual.</p>
+          <p style="font-size: 0.85rem;">Si notas que tu bebé se mueve significativamente menos de lo habitual después de las 28 semanas.</p>
         </div>
       </div>
     </div>
 
-    <!-- VISTA 4: AUTOEXAMEN DE MAMAS -->
+    <!-- VISTA 4: SIGNOS DE ALARMA GINECOLÓGICOS -->
+    <div id="view-alarma-ginecologia" class="page-view">
+      <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
+      <div class="content-box">
+        <h2><i class="fa-solid fa-user-doctor"></i> Signos de Alarma Ginecológicos</h2>
+        <p style="margin-bottom: 1rem; font-size: 0.9rem;">Motivos de consulta prioritaria con la matrona o urgencia fuera del periodo gestacional:</p>
+
+        <div class="alert-card">
+          <h4><i class="fa-solid fa-droplet"></i> Sangrado Anormal o Menopáusico</h4>
+          <p style="font-size: 0.85rem;">Sangrados fuera del ciclo menstrual, sangrado abundante con coágulos o cualquier sangrado tras la menopausia.</p>
+        </div>
+
+        <div class="alert-card">
+          <h4><i class="fa-solid fa-align-center"></i> Dolor Pélvico Agudo e Intenso</h4>
+          <p style="font-size: 0.85rem;">Dolor bajo vientre severo, repentino o persistente que no cede con analgésicos comunes.</p>
+        </div>
+
+        <div class="alert-card">
+          <h4><i class="fa-solid fa-bacteria"></i> Flujo Vaginal Atípico</h4>
+          <p style="font-size: 0.85rem;">Flujo con mal olor, color verdoso/amarillento, acompañado de prurito (picazón) intenso o ardor al orinar.</p>
+        </div>
+
+        <div class="alert-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Alteraciones en las Mamas</h4>
+          <p style="font-size: 0.85rem;">Palpación de protuberancias/bultos, secreción de sangre o líquido por el pezón, retracción del pezón o enrojecimiento de la piel.</p>
+        </div>
+
+        <div class="alert-card">
+          <h4><i class="fa-solid fa-capsules"></i> Complicaciones con Anticonceptivos</h4>
+          <p style="font-size: 0.85rem;">Dolor pélvico intenso tras inserción de DIU, no palpación de hilos del DIU, o infección en la zona del implante subdérmico.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISTA 5: AUTOEXAMEN DE MAMAS -->
     <div id="view-mamas" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-ribbon"></i> Guía de Autoexamen de Mamas</h2>
-        <p style="font-size: 0.9rem; margin-bottom: 1rem;">Realízalo 7 días después del inicio de tu menstruación. Si ya no menstruas, fija un día fijo al mes.</p>
+        <p style="font-size: 0.9rem; margin-bottom: 1rem;">Realízalo 7 días después del inicio de tu regla. Si ya no menstruas, fija un día específico al mes.</p>
         
         <ol style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.6;">
           <li><strong>Observación frente al espejo:</strong> Con los brazos a los lados, busca cambios en la piel, hundimientos, enrojecimiento o asimetrías.</li>
@@ -470,67 +517,97 @@
       </div>
     </div>
 
-    <!-- VISTA 5: MÉTODOS ANTICONCEPTIVOS DISPONIBLES -->
+    <!-- VISTA 6: MÉTODOS ANTICONCEPTIVOS Y EFECTOS ADVERSOS -->
     <div id="view-metodos" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
-        <h2><i class="fa-solid fa-pills"></i> Métodos Disponibles en tu CESFAM/CECOSF</h2>
-        <p style="font-size: 0.85rem;">Todos los métodos anticonceptivos son gratuitos previa evaluación y control matronal:</p>
+        <h2><i class="fa-solid fa-pills"></i> Anticonceptivos en CESFAM / CECOSF</h2>
+        <p style="font-size: 0.85rem;">Métodos disponibles gratuitamente en tu centro de salud y sus efectos esperables:</p>
         
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>Tipo</th>
                 <th>Método</th>
-                <th>Duración / Frecuencia</th>
+                <th>Uso / Frecuencia</th>
+                <th>Efectos Secundarios Comunes</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Hormonal Combinado</strong></td>
-                <td>Pastillas anticonceptivas / Inyectable mensual</td>
+                <td><strong>Hormonal Combinado</strong> (Pastillas / Inyectable mensual)</td>
                 <td>Diario / Cada 30 días</td>
+                <td>Sensibilidad mamaria, cefalea leve, náuseas iniciales.</td>
               </tr>
               <tr>
-                <td><strong>Progestágeno Solo</strong></td>
-                <td>Pastillas lactancia / Inyectable trimestral</td>
+                <td><strong>Progestágeno Solo</strong> (Pastillas lactancia / Inyectable trimestral)</td>
                 <td>Diario / Cada 3 meses</td>
+                <td>Ausencia de regla (amenorrea), manchados irregulares (spotting).</td>
               </tr>
               <tr>
-                <td><strong>Larga Duración (LARC)</strong></td>
-                <td>Implante Subdérmico (Implanon) / DIU T de Cobre</td>
-                <td>3 a 5 años / Hasta 10 años</td>
+                <td><strong>Implante Subdérmico</strong> (Implanon)</td>
+                <td>Duración 3 a 5 años</td>
+                <td>Manchados variables, amenorrea, sensibilidad mamaria leve.</td>
               </tr>
               <tr>
-                <td><strong>Barrera</strong></td>
-                <td>Preservativo Masculino y Femenino</td>
-                <td>Uso único por relación sexual</td>
+                <td><strong>DIU T de Cobre</strong></td>
+                <td>Duración hasta 10 años</td>
+                <td>Aumento del sangrado menstrual y cólicos menstruales más intensos.</td>
+              </tr>
+              <tr>
+                <td><strong>Preservativo Masculino y Femenino</strong></td>
+                <td>Uso único por relación</td>
+                <td>Sin efectos sistémicos. Protege contra ITS.</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <br>
+        <p style="font-size: 0.85rem; background-color: #fff3e0; padding: 0.8rem; border-radius: 8px; border-left: 4px solid #ff9800;">
+          <strong>Importante:</strong> Los efectos secundarios suelen disminuir progresivamente tras los primeros 3 meses de adaptación. Si las molestias persisten, consulta a tu matrona para reevaluar el método.
+        </p>
       </div>
     </div>
 
-    <!-- VISTA 6: EFECTOS ADVERSOS -->
-    <div id="view-efectos" class="page-view">
+    <!-- VISTA 7: CUIDADOS Y RECOMENDACIONES POST-PROCEDIMIENTOS -->
+    <div id="view-cuidados" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
-        <h2><i class="fa-solid fa-circle-info"></i> Efectos Secundarios Frecuentes</h2>
-        <p style="font-size: 0.9rem; line-height: 1.5;">Es normal experimentar algunas adaptaciones corporales durante los primeros 3 meses de uso de un método anticonceptivo:</p>
-        <br>
-        <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6;">
-          <li><strong>Manchado irregular (Spotting):</strong> Pequeños sangrados entre menstruaciones (muy común en implantes o DIU).</li>
-          <li><strong>Sensibilidad mamaria:</strong> Molestia leve en los senos durante las primeras semanas.</li>
-          <li><strong>Cambios de ánimo leves o cefaleas:</strong> Ocurren mientras el cuerpo se adapta a la carga hormonal.</li>
-        </ul>
-        <br>
-        <p style="font-size: 0.85rem; background-color: #fff3e0; padding: 0.8rem; border-radius: 8px;"><strong>Nota:</strong> Si el malestar persiste o es muy severo, acude a tu control matronal para evaluar cambio de método.</p>
+        <h2><i class="fa-solid fa-notes-medical"></i> Cuidados y Recomendaciones</h2>
+        <p style="font-size: 0.85rem; margin-bottom: 1rem;">Indicaciones posteriores a la colocación de anticonceptivos y periodos clínicos:</p>
+
+        <div class="care-card">
+          <h4><i class="fa-solid fa-syringe"></i> Cuidados Post-Inserción de Implante (Implanon)</h4>
+          <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.5;">
+            <li>Mantener el parche/venda seco por 24 a 48 horas.</li>
+            <li>No levantar objetos pesados con ese brazo durante los primeros 2 días.</li>
+            <li>Es normal la aparición de un pequeño moretón (hematoma) o molestia en la zona.</li>
+            <li>Consultar si hay enrojecimiento severo, pus o dolor punzante en el sitio de inserción.</li>
+          </ul>
+        </div>
+
+        <div class="care-card">
+          <h4><i class="fa-solid fa-ring"></i> Cuidados Post-Inserción de DIU T de Cobre</h4>
+          <p style="font-size: 0.85rem; line-height: 1.5;">
+            • Evitar relaciones sexuales con penetración, duchas vaginales y tampones por 7 días.<br>
+            • Es normal sentir cólicos leves a moderados los primeros días (puedes tomar el analgésico indicado por la matrona).<br>
+            • Controlar la presencia de los hilos del DIU tras tu primera menstruación post-inserción.<br>
+            • Consultar si hay fiebre, dolor pélvico insoportable o flujo con mal olor.
+          </p>
+        </div>
+
+        <div class="care-card">
+          <h4><i class="fa-solid fa-heart-pulse"></i> Cuidados Posparto y Puerperio</h4>
+          <p style="font-size: 0.85rem; line-height: 1.5;">
+            • <strong>Herida operatoria (Cesárea o Episiorrafia):</strong> Lavar sólo con agua y jabón neutro, secar a toques suaves. Mantener limpia y ventilada.<br>
+            • <strong>Loquios (sangrado posparto):</strong> Disminuyen gradualmente de rojo a rosado/blanquecino. Usar toallas de maternidad y evitar tampones.<br>
+            • <strong>Reposo relativo:</strong> Mantener hidratación continua, favorecer el descanso y acudir a tu control de puerperio a los 7-10 días.
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- VISTA 7: PAE -->
+    <!-- VISTA 8: PAE -->
     <div id="view-pae" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
@@ -544,29 +621,46 @@
       </div>
     </div>
 
-    <!-- VISTA 8: PREVENTIVOS -->
-    <div id="view-preventivo" class="page-view">
+    <!-- VISTA 9: ¿CUÁNDO CONSULTAR A LA MATRONA? (PREVENTIVOS MINSAL) -->
+    <div id="view-consultas" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
-        <h2><i class="fa-solid fa-shield-virus"></i> Exámenes Preventivos</h2>
-        <p style="font-size: 0.9rem; line-height: 1.5;"><strong>Papanicolaou (PAP):</strong> Indicado para personas con cuello uterino de 25 a 64 años. Permite detectar lesiones precancerosas a tiempo.</p>
-        <br>
-        <p style="font-size: 0.9rem; line-height: 1.5;"><strong>Test Rápido de VIH:</strong> Diagnóstico confidencial en solo 15 minutos. Solicítalo en tu centro de salud de forma gratuita.</p>
-      </div>
-    </div>
-
-    <!-- VISTA 9: DERECHOS EN EL PARTO -->
-    <div id="view-derechos" class="page-view">
-      <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
-      <div class="content-box">
-        <h2><i class="fa-solid fa-heart-pulse"></i> Ley de Parto Respetado</h2>
-        <p style="font-size: 0.9rem; line-height: 1.5;">Tienes derecho a:</p>
-        <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 0.5rem;">
-          <li>Acompañamiento significativo durante el preparto, parto y posparto.</li>
-          <li>Trato digno, respetuoso y libre de violencia obstétrica.</li>
-          <li>Contacto piel con piel inmediato con tu recién nacido si el estado de salud lo permite.</li>
-          <li>Recibir información clara y comprensible sobre todos los procedimientos.</li>
-        </ul>
+        <h2><i class="fa-solid fa-calendar-days"></i> ¿Cuándo consultar a la Matrona?</h2>
+        <p style="font-size: 0.85rem; margin-bottom: 1rem;">Exámenes preventivos y frecuencias según las pautas del Ministerio de Salud (MINSAL):</p>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Examen</th>
+                <th>Población / Edad</th>
+                <th>Frecuencia Recomendada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Papanicolaou (PAP)</strong></td>
+                <td>Mujeres / personas con útero de 25 a 64 años</td>
+                <td><strong>Cada 3 años</strong> (si los resultados previos son normales).</td>
+              </tr>
+              <tr>
+                <td><strong>Detección de VPH</strong></td>
+                <td>Según programa territorial vigente</td>
+                <td><strong>Cada 5 años</strong> en esquemas primarios de tamizaje.</td>
+              </tr>
+              <tr>
+                <td><strong>Mamografía Preventiva</strong></td>
+                <td>Mujeres de 50 a 69 años (o con antecedentes familiares)</td>
+                <td><strong>Cada 2 años</strong> (gratuita en APS).</td>
+              </tr>
+              <tr>
+                <td><strong>Examen Preventivo de Salud (EMPA)</strong></td>
+                <td>15 a 64 años</td>
+                <td><strong>Anual</strong> (evalúa presión, glicemia, colesterol y peso).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
