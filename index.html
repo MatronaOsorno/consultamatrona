@@ -405,7 +405,7 @@
           <div class="icon-box"><i class="fa-solid fa-user-doctor"></i></div>
           <div class="menu-card-info">
             <h3>Signos de Alarma Ginecológicos</h3>
-            <p>Cuándo consultar a la matrona fuera del embarazo.</p>
+            <p>Cuándo consultar a la matrona de urgencia.</p>
           </div>
         </div>
 
@@ -436,12 +436,12 @@
           </div>
         </div>
 
-        <!-- 8. Anticoncepción de Emergencia (PAE) -->
-        <div class="menu-card" onclick="navigateTo('view-pae')">
-          <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+        <!-- 8. Cuidados del Recién Nacido (REEMPLAZADO) -->
+        <div class="menu-card" onclick="navigateTo('view-rn')">
+          <div class="icon-box"><i class="fa-solid fa-baby-carriage"></i></div>
           <div class="menu-card-info">
-            <h3>Píldora del Día Después (PAE)</h3>
-            <p>Uso, plazos y cómo solicitarla en el centro de salud.</p>
+            <h3>Cuidados del Recién Nacido</h3>
+            <p>Cordón umbilical, sueño seguro, aseo y signos de alerta.</p>
           </div>
         </div>
 
@@ -454,7 +454,7 @@
           </div>
         </div>
 
-        <!-- 10. TELESALUD (LINK EXTERNO ACTUALIZADO) -->
+        <!-- 10. TELESALUD (LINK EXTERNO) -->
         <a href="https://telesalud.gob.cl/solicitud" target="_blank" class="menu-card featured">
           <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
           <div class="menu-card-info">
@@ -527,12 +527,15 @@
       </div>
     </div>
 
-    <!-- VISTA 4: SIGNOS DE ALARMA GINECOLÓGICOS -->
+    <!-- VISTA 4: SIGNOS DE ALARMA GINECOLÓGICOS (ACTUALIZADO) -->
     <div id="view-alarma-ginecologia" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-user-doctor"></i> Alarma Ginecológicos</h2>
-        <p style="margin-bottom: 0.8rem; font-size: 0.85rem;">Motivos de consulta prioritaria fuera del periodo gestacional:</p>
+        
+        <div style="background-color: #ffebee; border: 2px solid #d32f2f; color: #b71c1c; padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.85rem; font-weight: 600; text-align: center;">
+          <i class="fa-solid fa-triangle-exclamation"></i> Si presentas alguno de estos signos, debes pedir hora o acudir a tu matrona de tu centro de salud de manera urgente.
+        </div>
 
         <div class="alert-card">
           <h4><i class="fa-solid fa-droplet"></i> Sangrado Anormal o Posmenopáusico</h4>
@@ -667,17 +670,46 @@
       </div>
     </div>
 
-    <!-- VISTA 8: PAE -->
-    <div id="view-pae" class="page-view">
+    <!-- VISTA 8: CUIDADOS DEL RECIÉN NACIDO (NUEVA SECCIÓN) -->
+    <div id="view-rn" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
-        <h2><i class="fa-solid fa-bolt"></i> Píldora del Día Después (PAE)</h2>
-        <p style="font-size: 0.85rem; line-height: 1.45;">Método de emergencia ante una relación sexual sin protección o falla del método habitual.</p>
-        <br>
-        <ul style="padding-left: 1.1rem; font-size: 0.82rem; line-height: 1.5;">
-          <li><strong>Efectividad:</strong> Mayor eficacia dentro de las primeras 24 horas (útil hasta las 120 horas / 5 días).</li>
-          <li><strong>Acceso:</strong> Solicítala directamente en OIRS o Sector de tu CESFAM/CECOSF sin hora previa.</li>
-        </ul>
+        <h2><i class="fa-solid fa-baby-carriage"></i> Cuidados del Recién Nacido</h2>
+        <p style="font-size: 0.85rem; margin-bottom: 0.8rem;">Recomendaciones esenciales para los primeros días de vida:</p>
+
+        <div class="care-card">
+          <h4><i class="fa-solid fa-droplet"></i> Cuidado del Cordón Umbilical</h4>
+          <p style="font-size: 0.8rem; line-height: 1.45;">
+            • Limpiar la base del cordón en cada muda con gasa y alcohol al 70%.<br>
+            • Dejar secar al aire y colocar el pañal por debajo del cordón para evitar roce y humedad.<br>
+            • Cae espontáneamente entre los 7 a 14 días.
+          </p>
+        </div>
+
+        <div class="care-card">
+          <h4><i class="fa-solid fa-bed"></i> Sueño Seguro</h4>
+          <p style="font-size: 0.8rem; line-height: 1.45;">
+            • Acostar al bebé siempre de espalda (boca arriba).<br>
+            • Usar colchón firme, sin almohadas, peluches o cobertores pesados.<br>
+            • Mantener la habitación a temperatura agradable y libre de humo de cigarro.
+          </p>
+        </div>
+
+        <div class="care-card">
+          <h4><i class="fa-solid fa-bath"></i> Aseo y Baño</h4>
+          <p style="font-size: 0.8rem; line-height: 1.45;">
+            • Baño corto con agua tibia (36-37°C) y jabón neutro.<br>
+            • Realizar muda frecuente para prevenir dermatitis del pañal.<br>
+            • Limpiar de adelante hacia atrás en las niñas.
+          </p>
+        </div>
+
+        <div class="alert-card">
+          <h4><i class="fa-solid fa-triangle-exclamation"></i> Signos de Alerta en el Recién Nacido</h4>
+          <p style="font-size: 0.8rem; line-height: 1.45;">
+            Acude de urgencia si presenta: <strong>Fiebre</strong> (37.5°C o más), <strong>color amarillo de la piel</strong> que llega a las piernas, rechazo de las tomas/lactancia, somnolencia extrema (no despierta) o secreción con mal olor/enrojecimiento en el cordón.
+          </p>
+        </div>
       </div>
     </div>
 
