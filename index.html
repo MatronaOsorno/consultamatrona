@@ -260,6 +260,11 @@
       cursor: pointer;
     }
 
+    .checklist-item input[type="checkbox"]:checked + span {
+      color: #888;
+      text-decoration: line-through;
+    }
+
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -279,67 +284,6 @@
       border: 0;
     }
 
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      margin-top: 1rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.88rem;
-    }
-
-    th {
-      background-color: var(--rosa-mexicano);
-      color: var(--texto-blanco);
-      padding: 0.75rem 0.6rem;
-      text-align: left;
-    }
-
-    td {
-      padding: 0.75rem 0.6rem;
-      border-bottom: 1px solid #f8bbd0;
-      vertical-align: top;
-    }
-
-    @media (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-
-      tr {
-        border: 1px solid #f8bbd0;
-        border-radius: 10px;
-        margin-bottom: 0.8rem;
-        padding: 0.7rem;
-        background-color: #fafafa;
-      }
-
-      td {
-        border: none;
-        border-bottom: 1px solid #f2f2f2;
-        position: relative;
-        padding: 0.45rem 0;
-        text-align: left;
-      }
-
-      td:last-child {
-        border-bottom: none;
-      }
-
-      td strong {
-        color: var(--rosa-mexicano-dark);
-      }
-    }
-
     footer {
       text-align: center;
       padding: 1.4rem 1rem;
@@ -354,6 +298,7 @@
 
 <body>
 
+  <!-- ENCABEZADO -->
   <header>
     <h1>Consulta Matrona</h1>
     <p>Salud Sexual, Reproductiva y Materna - Red de Salud APS</p>
@@ -437,8 +382,13 @@
           </div>
         </div>
 
-        <a href="https://telesalud.gob.cl/solicitud" target="_blank" rel="noopener noreferrer" class="menu-card featured">
+        <a href="https://telesalud.gob.cl/solicitud"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="menu-card featured">
+
           <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
+
           <div class="menu-card-info">
             <h3>Pide aquí tu hora con matrona de telesalud</h3>
             <p>Acceso directo a la plataforma Telesalud.</p>
@@ -450,37 +400,83 @@
 
     <!-- BOLSO DE PARTO -->
     <div id="view-bolso" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-suitcase"></i> ¿Qué llevar en tu bolso de parto?</h2>
+
+        <h2>
+          <i class="fa-solid fa-suitcase"></i>
+          ¿Qué llevar en tu bolso de parto?
+        </h2>
+
         <p style="margin-bottom: 0.8rem; font-size: 0.88rem;">
           Lista de cotejo recomendada para el ingreso a maternidad:
         </p>
 
         <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox"> <span>Cédula de Identidad y carnet de control prenatal.</span></li>
-          <li class="checklist-item"><input type="checkbox"> <span>3 a 4 piluchos o bodys de algodón para el recién nacido.</span></li>
-          <li class="checklist-item"><input type="checkbox"> <span>3 a 4 enteritos/pijamas de recién nacido.</span></li>
-          <li class="checklist-item"><input type="checkbox"> <span>1 paquete de pañales de recién nacido.</span></li>
-          <li class="checklist-item"><input type="checkbox"> <span>Manta o tutito suave de algodón.</span></li>
-          <li class="checklist-item"><input type="checkbox"> <span>Camisa de dormir o pijama cómodo con apertura frontal (lactancia).</span></li>
-          <li class="checklist-item"><input type="checkbox"> <span>Utensilios de aseo personal (cepillado, jabón, toalla).</span></li>
-          <li class="checklist-item"><input type="checkbox"> <span>Toallas higiénicas de maternidad.</span></li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-1">
+            <span>Cédula de Identidad y carnet de control prenatal.</span>
+          </li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-2">
+            <span>3 a 4 piluchos o bodys de algodón para el recién nacido.</span>
+          </li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-3">
+            <span>3 a 4 enteritos/pijamas de recién nacido.</span>
+          </li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-4">
+            <span>1 paquete de pañales de recién nacido.</span>
+          </li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-5">
+            <span>Manta o tutito suave de algodón.</span>
+          </li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-6">
+            <span>Camisa de dormir o pijama cómodo con apertura frontal (lactancia).</span>
+          </li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-7">
+            <span>Utensilios de aseo personal (cepillado, jabón, toalla).</span>
+          </li>
+
+          <li class="checklist-item">
+            <input type="checkbox" data-check="bolso-8">
+            <span>Toallas higiénicas de maternidad.</span>
+          </li>
+
         </ul>
+
       </div>
     </div>
 
     <!-- LACTANCIA MATERNA -->
     <div id="view-lactancia" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-baby"></i> Técnicas de Lactancia</h2>
+
+        <h2>
+          <i class="fa-solid fa-baby"></i>
+          Técnicas de Lactancia
+        </h2>
+
         <p style="font-size: 0.88rem;">
           Un buen acople es fundamental para evitar grietas y asegurar la nutrición de tu bebé. Revisa el siguiente video:
         </p>
@@ -492,203 +488,188 @@
             allowfullscreen>
           </iframe>
         </div>
+
       </div>
     </div>
 
     <!-- SIGNOS DE ALARMA EN EL EMBARAZO -->
     <div id="view-alarma-embarazo" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-triangle-exclamation"></i> Signos de Alarma en el Embarazo</h2>
-        <img src="./Alarma-Embarazo.jpg" alt="Signos de Alarma en el Embarazo - Red APS Osorno" class="infografia-img">
+
+        <h2>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          Signos de Alarma en el Embarazo
+        </h2>
+
+        <img
+          src="./Alarma-Embarazo.jpg"
+          alt="Signos de Alarma en el Embarazo - Red APS Osorno"
+          class="infografia-img">
+
       </div>
     </div>
 
     <!-- SIGNOS DE ALARMA GINECOLÓGICOS -->
     <div id="view-alarma-ginecologia" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-user-doctor"></i> Signos de Alarma Ginecológicos</h2>
-        <img src="./Alarma-ginecologico.jpg" alt="Signos de Alarma Ginecológicos - Red APS Osorno" class="infografia-img">
+
+        <h2>
+          <i class="fa-solid fa-user-doctor"></i>
+          Signos de Alarma Ginecológicos
+        </h2>
+
+        <img
+          src="./Alarma-ginecologico.jpg"
+          alt="Signos de Alarma Ginecológicos - Red APS Osorno"
+          class="infografia-img">
+
       </div>
     </div>
 
     <!-- AUTOEXAMEN DE MAMAS -->
     <div id="view-mamas" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-ribbon"></i> Autoexamen de Mamas</h2>
-        <img src="./autoexeman-mama.png" alt="Infografía Autoexamen de Mamas - Universidad de Los Lagos" class="infografia-img">
+
+        <h2>
+          <i class="fa-solid fa-ribbon"></i>
+          Autoexamen de Mamas
+        </h2>
+
+        <img
+          src="./autoxeman-mama.png"
+          alt="Infografía Autoexamen de Mamas - Universidad de Los Lagos"
+          class="infografia-img">
+
       </div>
     </div>
 
     <!-- MÉTODOS ANTICONCEPTIVOS -->
     <div id="view-metodos" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-pills"></i> Anticonceptivos en APS</h2>
 
-        <p style="font-size: 0.88rem;">
+        <h2>
+          <i class="fa-solid fa-pills"></i>
+          Anticonceptivos en APS
+        </h2>
+
+        <p style="font-size: 0.88rem; margin-bottom: 1rem;">
           Métodos disponibles en tu CESFAM/CECOSF y sus efectos esperables:
         </p>
 
-        <img src="./Metodos-Cesfam.png" alt="Métodos anticonceptivos disponibles en CESFAM/CECOSF" class="infografia-img">
+        <img
+          src="./Metodos-Cesfam.png"
+          alt="Métodos anticonceptivos disponibles en CESFAM/CECOSF"
+          class="infografia-img">
 
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Método</th>
-                <th>Frecuencia</th>
-                <th>Efectos Secundarios Comunes</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td><strong>Hormonal Combinado</strong></td>
-                <td>Diario / Mensual</td>
-                <td>Sensibilidad mamaria, cefalea leve, náuseas iniciales.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Progestágeno Solo</strong></td>
-                <td>Diario / Trimestral</td>
-                <td>Ausencia de regla (amenorrea), manchados irregulares (spotting).</td>
-              </tr>
-
-              <tr>
-                <td><strong>Implante Subdérmico</strong></td>
-                <td>3 a 5 años</td>
-                <td>Manchados variables, amenorrea, sensibilidad mamaria.</td>
-              </tr>
-
-              <tr>
-                <td><strong>DIU T de Cobre</strong></td>
-                <td>Hasta 10 años</td>
-                <td>Aumento del sangrado menstrual y cólicos más intensos.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Preservativos</strong></td>
-                <td>Uso único</td>
-                <td>Sin efectos hormonales. Protege contra ITS.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p style="font-size: 0.85rem; background-color: #fff3e0; padding: 0.8rem; border-radius: 8px; border-left: 4px solid #ff9800; margin-top: 1rem;">
-          <strong>Nota:</strong> Los efectos secundarios suelen disminuir progresivamente tras los primeros 3 meses de uso.
-        </p>
       </div>
     </div>
 
     <!-- CUIDADOS Y RECOMENDACIONES -->
     <div id="view-cuidados" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-notes-medical"></i> Cuidados y Recomendaciones</h2>
-        <img src="./Cuidados-recomendaciones.jpg" alt="Cuidados Maternos y Recomendaciones - Red APS Osorno" class="infografia-img">
+
+        <h2>
+          <i class="fa-solid fa-notes-medical"></i>
+          Cuidados y Recomendaciones
+        </h2>
+
+        <img
+          src="./Cuidados-recomendaciones.jpg"
+          alt="Cuidados Maternos y Recomendaciones - Red APS Osorno"
+          class="infografia-img">
+
       </div>
     </div>
 
     <!-- CUIDADOS DEL RECIÉN NACIDO -->
     <div id="view-rn" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-baby-carriage"></i> Cuidados del Recién Nacido</h2>
-        <img src="./Recien-Nacido.png" alt="Infografía Cuidados del Recién Nacido - Universidad de Los Lagos" class="infografia-img">
+
+        <h2>
+          <i class="fa-solid fa-baby-carriage"></i>
+          Cuidados del Recién Nacido
+        </h2>
+
+        <img
+          src="./Recien-Nacido.png"
+          alt="Infografía Cuidados del Recién Nacido - Universidad de Los Lagos"
+          class="infografia-img">
+
       </div>
     </div>
 
     <!-- CUÁNDO CONSULTAR A LA MATRONA -->
     <div id="view-consultas" class="page-view">
+
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
       <div class="content-box">
-        <h2><i class="fa-solid fa-calendar-days"></i> ¿Cuándo consultar a la Matrona?</h2>
 
-        <p style="font-size: 0.88rem; margin-bottom: 0.8rem;">
+        <h2>
+          <i class="fa-solid fa-calendar-days"></i>
+          ¿Cuándo consultar a la Matrona?
+        </h2>
+
+        <p style="font-size: 0.88rem; margin-bottom: 1rem;">
           Exámenes preventivos y frecuencias según norma MINSAL:
         </p>
 
-        <img src="./Consulta-Matrona.png" alt="Cuándo consultar a la matrona" class="infografia-img">
+        <img
+          src="./Consulta-Matrona.png"
+          alt="Cuándo consultar a la matrona"
+          class="infografia-img">
 
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Examen</th>
-                <th>Población</th>
-                <th>Frecuencia</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td><strong>Papanicolaou (PAP)</strong></td>
-                <td>25 a 64 años</td>
-                <td><strong>Cada 3 años</strong> (con resultados normales).</td>
-              </tr>
-
-              <tr>
-                <td><strong>Detección de VPH</strong></td>
-                <td>30 a 64 años</td>
-                <td><strong>Cada 5 años</strong> según esquema de tamizaje.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Mamografía Preventiva</strong></td>
-                <td>40 a 69 años</td>
-                <td><strong>Cada 2 años</strong> (gratuita en APS).</td>
-              </tr>
-
-              <tr>
-                <td><strong>Examen Preventivo (EMPA)</strong></td>
-                <td>20 a 64 años</td>
-                <td><strong>Anual</strong> (evalúa presión, glicemia y colesterol).</td>
-              </tr>
-
-              <tr>
-                <td><strong>Examen del Adolescente</strong></td>
-                <td>10 a 20 años</td>
-                <td><strong>Anual</strong> (evalúa desarrollo, peso y presión).</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
 
   </main>
 
+  <!-- PIE DE PÁGINA -->
   <footer>
     <p>Internas Obstetricia y Puericultura, Universidad de Los Lagos 2026</p>
   </footer>
 
+  <!-- FUNCIONES JAVASCRIPT -->
   <script>
+
+    // ==========================================
+    // NAVEGACIÓN ENTRE LAS SECCIONES
+    // ==========================================
+
     function navigateTo(pageId) {
+
       const pages = document.querySelectorAll('.page-view');
 
       pages.forEach(page => {
@@ -699,12 +680,102 @@
 
       if (targetPage) {
         targetPage.classList.add('active');
+
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
         });
       }
     }
+
+
+    // ==========================================
+    // GUARDADO AUTOMÁTICO DEL BOLSO DE PARTO
+    // ==========================================
+
+    const STORAGE_KEY = 'consultaMatrona_bolsoParto_v1';
+
+
+    // Recuperar las casillas guardadas
+    function cargarChecklist() {
+
+      try {
+
+        const datosGuardados = localStorage.getItem(STORAGE_KEY);
+
+        if (!datosGuardados) {
+          return;
+        }
+
+        const estados = JSON.parse(datosGuardados);
+
+        document.querySelectorAll(
+          '.checklist-item input[type="checkbox"]'
+        ).forEach(checkbox => {
+
+          const identificador = checkbox.dataset.check;
+
+          if (identificador in estados) {
+            checkbox.checked = estados[identificador];
+          }
+
+        });
+
+      } catch (error) {
+
+        console.warn('No se pudieron recuperar las casillas guardadas:', error);
+
+      }
+    }
+
+
+    // Guardar automáticamente cada cambio
+    function guardarChecklist() {
+
+      try {
+
+        const estados = {};
+
+        document.querySelectorAll(
+          '.checklist-item input[type="checkbox"]'
+        ).forEach(checkbox => {
+
+          const identificador = checkbox.dataset.check;
+
+          estados[identificador] = checkbox.checked;
+
+        });
+
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(estados)
+        );
+
+      } catch (error) {
+
+        console.warn('No se pudieron guardar las casillas:', error);
+
+      }
+    }
+
+
+    // Inicializar el guardado cuando carga la página
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Recuperar las marcas anteriores
+      cargarChecklist();
+
+      // Guardar cada vez que se marca o desmarca una casilla
+      document.querySelectorAll(
+        '.checklist-item input[type="checkbox"]'
+      ).forEach(checkbox => {
+
+        checkbox.addEventListener('change', guardarChecklist);
+
+      });
+
+    });
+
   </script>
 
 </body>
