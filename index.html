@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,8 +10,18 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
+  <!-- Iconos y tipografía -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Precarga de las infografías -->
+  <link rel="preload" as="image" href="./Alarma-Embarazo.jpg">
+  <link rel="preload" as="image" href="./Alarma-ginecologico.jpg">
+  <link rel="preload" as="image" href="./autoxeman-mama.png">
+  <link rel="preload" as="image" href="./Metodos-Cesfam.png">
+  <link rel="preload" as="image" href="./Cuidados-recomendaciones.jpg">
+  <link rel="preload" as="image" href="./Recien-Nacido.png">
+  <link rel="preload" as="image" href="./Consulta-Matrona.png">
 
   <style>
     :root {
@@ -21,6 +32,13 @@
       --texto-blanco: #ffffff;
       --texto-oscuro: #2c3e50;
       --shadow-color: rgba(233, 30, 99, 0.2);
+
+      /* Tonos suaves para el bolso de parto */
+      --rosa-suave: #fff0f5;
+      --rosa-medio: #f9dce7;
+      --lila-suave: #f1e8f8;
+      --crema-suave: #fff8ed;
+      --verde-suave: #eaf5ed;
     }
 
     * {
@@ -65,29 +83,6 @@
       margin-top: 0.2rem;
     }
 
-    .btn-back {
-      background-color: var(--texto-blanco);
-      color: var(--rosa-mexicano);
-      border: 2px solid var(--rosa-mexicano);
-      padding: 0.65rem 1.4rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: all 0.2s ease;
-    }
-
-    .btn-back:hover, .btn-back:active {
-      background-color: var(--rosa-mexicano);
-      color: var(--texto-blanco);
-      transform: translateY(-2px);
-    }
-
     main {
       flex: 1;
       width: 100%;
@@ -108,6 +103,7 @@
       opacity: 1;
     }
 
+    /* MENÚ PRINCIPAL */
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -141,7 +137,7 @@
       gap: 1rem;
       cursor: pointer;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
       width: 100%;
     }
@@ -205,6 +201,32 @@
       color: #fce4ec;
     }
 
+    /* BOTÓN VOLVER */
+    .btn-back {
+      background-color: var(--texto-blanco);
+      color: var(--rosa-mexicano);
+      border: 2px solid var(--rosa-mexicano);
+      padding: 0.65rem 1.4rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+    }
+
+    .btn-back:hover,
+    .btn-back:active {
+      background-color: var(--rosa-mexicano);
+      color: var(--texto-blanco);
+      transform: translateY(-2px);
+    }
+
+    /* CONTENIDO GENERAL */
     .content-box {
       background-color: #ffffff;
       border-radius: 16px;
@@ -236,35 +258,187 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
+    /* BOLSO DE PARTO: ESTILO TIPO INFOGRAFÍA */
+    .bolso-box {
+      background: linear-gradient(180deg, #fff8fb 0%, #fff 100%);
+      border: none;
+      border-top: 6px solid #e8a3bd;
+      padding: 1.2rem;
+    }
+
+    .bolso-hero {
+      text-align: center;
+      background: linear-gradient(135deg, #fce4ec, #f7eafa);
+      border-radius: 20px;
+      padding: 1.5rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .bolso-hero-icon {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #d66b96;
+      border-radius: 50%;
+      font-size: 2.2rem;
+      box-shadow: 0 4px 12px rgba(180, 90, 130, 0.12);
+    }
+
+    .bolso-hero h2 {
+      display: block;
+      color: #b84e7b;
+      font-size: 1.35rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .bolso-hero p {
+      color: #765b69;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .bolso-progress {
+      background: #fff;
+      border: 1px solid #f2d5e1;
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .bolso-progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      color: #9c5271;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.55rem;
+    }
+
+    .progress-track {
+      height: 10px;
+      background: #f7e5ed;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #e8a3bd, #d66b96);
+      border-radius: 20px;
+      transition: width 0.25s ease;
+    }
+
+    .bolso-intro {
+      color: #765b69;
+      font-size: 0.87rem;
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
     .checklist {
       list-style: none;
       width: 100%;
+      display: grid;
+      gap: 0.7rem;
     }
 
     .checklist-item {
       display: flex;
-      align-items: flex-start;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #f8bbd0;
+      align-items: center;
       gap: 0.8rem;
-      font-size: 0.9rem;
-      line-height: 1.4;
+      padding: 0.9rem;
+      border: 1px solid #f1d9e4;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 2px 7px rgba(180, 90, 130, 0.06);
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: #594752;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .checklist-item:nth-child(4n+1) {
+      background: #fff8fb;
+    }
+
+    .checklist-item:nth-child(4n+2) {
+      background: #fffaf2;
+    }
+
+    .checklist-item:nth-child(4n+3) {
+      background: #faf7ff;
+    }
+
+    .checklist-item:nth-child(4n+4) {
+      background: #f7fbf7;
     }
 
     .checklist-item input[type="checkbox"] {
-      width: 22px;
-      height: 22px;
-      margin-top: 0.1rem;
-      accent-color: var(--rosa-mexicano);
+      width: 23px;
+      height: 23px;
+      margin: 0;
+      accent-color: #d66b96;
       flex-shrink: 0;
       cursor: pointer;
     }
 
-    .checklist-item input[type="checkbox"]:checked + span {
-      color: #888;
-      text-decoration: line-through;
+    .checklist-item span {
+      flex: 1;
     }
 
+    .checklist-item:has(input:checked) {
+      background: #f3f8f1;
+      border-color: #b8d8b8;
+    }
+
+    .checklist-item input:checked + span {
+      text-decoration: line-through;
+      color: #829082;
+    }
+
+    .bolso-note {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 15px;
+      background: #fff4e8;
+      color: #806348;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .bolso-note i {
+      color: #d69a58;
+      margin-right: 0.3rem;
+    }
+
+    .bolso-reset {
+      display: block;
+      margin: 1rem auto 0;
+      padding: 0.6rem 1rem;
+      border: 1px solid #d88ca9;
+      border-radius: 20px;
+      color: #b84e7b;
+      background: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .bolso-reset:hover {
+      background: #fff0f5;
+    }
+
+    /* VIDEO RESPONSIVO */
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -284,6 +458,7 @@
       border: 0;
     }
 
+    /* PIE DE PÁGINA */
     footer {
       text-align: center;
       padding: 1.4rem 1rem;
@@ -292,13 +467,36 @@
       background-color: #f8bbd0;
       margin-top: auto;
       width: 100%;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem 0.8rem;
+      }
+
+      .content-box {
+        padding: 1.1rem 0.9rem;
+      }
+
+      .bolso-box {
+        padding: 0.85rem;
+      }
+
+      .bolso-hero {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .checklist-item {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ENCABEZADO -->
   <header>
     <h1>Consulta Matrona</h1>
     <p>Salud Sexual, Reproductiva y Materna - Red de Salud APS</p>
@@ -382,13 +580,8 @@
           </div>
         </div>
 
-        <a href="https://telesalud.gob.cl/solicitud"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="menu-card featured">
-
+        <a href="https://telesalud.gob.cl/solicitud" target="_blank" rel="noopener noreferrer" class="menu-card featured">
           <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
-
           <div class="menu-card-info">
             <h3>Pide aquí tu hora con matrona de telesalud</h3>
             <p>Acceso directo a la plataforma Telesalud.</p>
@@ -400,257 +593,242 @@
 
     <!-- BOLSO DE PARTO -->
     <div id="view-bolso" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
 
-      <div class="content-box">
+      <div class="content-box bolso-box">
 
-        <h2>
-          <i class="fa-solid fa-suitcase"></i>
-          ¿Qué llevar en tu bolso de parto?
-        </h2>
+        <div class="bolso-hero">
+          <div class="bolso-hero-icon">
+            <i class="fa-solid fa-baby-carriage"></i>
+          </div>
+          <h2>¡Prepara tu bolso de parto!</h2>
+          <p>Una pequeña lista para ayudarte a tener todo listo para la llegada de tu bebé 💗</p>
+        </div>
 
-        <p style="margin-bottom: 0.8rem; font-size: 0.88rem;">
-          Lista de cotejo recomendada para el ingreso a maternidad:
+        <div class="bolso-progress">
+          <div class="bolso-progress-top">
+            <span><i class="fa-solid fa-list-check"></i> Tu lista de preparación</span>
+            <span id="progreso-texto">0 de 8 listos</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progreso-barra"></div>
+          </div>
+        </div>
+
+        <p class="bolso-intro">
+          Marca cada elemento a medida que lo vayas preparando. Tus selecciones quedarán guardadas en este dispositivo.
         </p>
 
-        <ul class="checklist">
+        <ul class="checklist" id="lista-bolso">
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-1">
-            <span>Cédula de Identidad y carnet de control prenatal.</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-1">
+              <span>Cédula de Identidad y carnet de control prenatal.</span>
+            </label>
           </li>
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-2">
-            <span>3 a 4 piluchos o bodys de algodón para el recién nacido.</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-2">
+              <span>3 a 4 piluchos o bodys de algodón para el recién nacido.</span>
+            </label>
           </li>
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-3">
-            <span>3 a 4 enteritos/pijamas de recién nacido.</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-3">
+              <span>3 a 4 enteritos/pijamas de recién nacido.</span>
+            </label>
           </li>
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-4">
-            <span>1 paquete de pañales de recién nacido.</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-4">
+              <span>1 paquete de pañales de recién nacido.</span>
+            </label>
           </li>
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-5">
-            <span>Manta o tutito suave de algodón.</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-5">
+              <span>Manta o tutito suave de algodón.</span>
+            </label>
           </li>
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-6">
-            <span>Camisa de dormir o pijama cómodo con apertura frontal (lactancia).</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-6">
+              <span>Camisa de dormir o pijama cómodo con apertura frontal (lactancia).</span>
+            </label>
           </li>
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-7">
-            <span>Utensilios de aseo personal (cepillado, jabón, toalla).</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-7">
+              <span>Utensilios de aseo personal (cepillado, jabón, toalla).</span>
+            </label>
           </li>
 
-          <li class="checklist-item">
-            <input type="checkbox" data-check="bolso-8">
-            <span>Toallas higiénicas de maternidad.</span>
+          <li>
+            <label class="checklist-item">
+              <input type="checkbox" data-check="bolso-8">
+              <span>Toallas higiénicas de maternidad.</span>
+            </label>
           </li>
 
         </ul>
 
+        <div class="bolso-note">
+          <i class="fa-solid fa-heart"></i>
+          Recuerda revisar con tu maternidad si existe alguna indicación adicional para el día del ingreso.
+        </div>
+
+        <button class="bolso-reset" type="button" onclick="reiniciarChecklist()">
+          <i class="fa-solid fa-rotate-left"></i> Reiniciar lista
+        </button>
+
       </div>
     </div>
 
-    <!-- LACTANCIA MATERNA -->
+    <!-- LACTANCIA -->
     <div id="view-lactancia" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-baby"></i>
-          Técnicas de Lactancia
-        </h2>
-
+        <h2><i class="fa-solid fa-baby"></i> Técnicas de Lactancia</h2>
         <p style="font-size: 0.88rem;">
           Un buen acople es fundamental para evitar grietas y asegurar la nutrición de tu bebé. Revisa el siguiente video:
         </p>
-
         <div class="video-container">
           <iframe
             src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
             title="Técnicas de Lactancia"
+            loading="lazy"
             allowfullscreen>
           </iframe>
         </div>
-
       </div>
     </div>
 
     <!-- SIGNOS DE ALARMA EN EL EMBARAZO -->
     <div id="view-alarma-embarazo" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          Signos de Alarma en el Embarazo
-        </h2>
-
+        <h2><i class="fa-solid fa-triangle-exclamation"></i> Signos de Alarma en el Embarazo</h2>
         <img
           src="./Alarma-Embarazo.jpg"
           alt="Signos de Alarma en el Embarazo - Red APS Osorno"
-          class="infografia-img">
-
+          class="infografia-img"
+          loading="eager"
+          decoding="async">
       </div>
     </div>
 
     <!-- SIGNOS DE ALARMA GINECOLÓGICOS -->
     <div id="view-alarma-ginecologia" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-user-doctor"></i>
-          Signos de Alarma Ginecológicos
-        </h2>
-
+        <h2><i class="fa-solid fa-user-doctor"></i> Signos de Alarma Ginecológicos</h2>
         <img
           src="./Alarma-ginecologico.jpg"
           alt="Signos de Alarma Ginecológicos - Red APS Osorno"
-          class="infografia-img">
-
+          class="infografia-img"
+          loading="eager"
+          decoding="async">
       </div>
     </div>
 
     <!-- AUTOEXAMEN DE MAMAS -->
     <div id="view-mamas" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-ribbon"></i>
-          Autoexamen de Mamas
-        </h2>
-
+        <h2><i class="fa-solid fa-ribbon"></i> Autoexamen de Mamas</h2>
         <img
           src="./autoxeman-mama.png"
           alt="Infografía Autoexamen de Mamas - Universidad de Los Lagos"
-          class="infografia-img">
-
+          class="infografia-img"
+          loading="eager"
+          decoding="async">
       </div>
     </div>
 
     <!-- MÉTODOS ANTICONCEPTIVOS -->
     <div id="view-metodos" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-pills"></i>
-          Anticonceptivos en APS
-        </h2>
-
+        <h2><i class="fa-solid fa-pills"></i> Anticonceptivos en APS</h2>
         <p style="font-size: 0.88rem; margin-bottom: 1rem;">
           Métodos disponibles en tu CESFAM/CECOSF y sus efectos esperables:
         </p>
-
         <img
           src="./Metodos-Cesfam.png"
           alt="Métodos anticonceptivos disponibles en CESFAM/CECOSF"
-          class="infografia-img">
-
+          class="infografia-img"
+          loading="eager"
+          decoding="async">
       </div>
     </div>
 
     <!-- CUIDADOS Y RECOMENDACIONES -->
     <div id="view-cuidados" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-notes-medical"></i>
-          Cuidados y Recomendaciones
-        </h2>
-
+        <h2><i class="fa-solid fa-notes-medical"></i> Cuidados y Recomendaciones</h2>
         <img
           src="./Cuidados-recomendaciones.jpg"
           alt="Cuidados Maternos y Recomendaciones - Red APS Osorno"
-          class="infografia-img">
-
+          class="infografia-img"
+          loading="eager"
+          decoding="async">
       </div>
     </div>
 
     <!-- CUIDADOS DEL RECIÉN NACIDO -->
     <div id="view-rn" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-baby-carriage"></i>
-          Cuidados del Recién Nacido
-        </h2>
-
+        <h2><i class="fa-solid fa-baby-carriage"></i> Cuidados del Recién Nacido</h2>
         <img
           src="./Recien-Nacido.png"
           alt="Infografía Cuidados del Recién Nacido - Universidad de Los Lagos"
-          class="infografia-img">
-
+          class="infografia-img"
+          loading="eager"
+          decoding="async">
       </div>
     </div>
 
     <!-- CUÁNDO CONSULTAR A LA MATRONA -->
     <div id="view-consultas" class="page-view">
-
       <button class="btn-back" onclick="navigateTo('view-menu')">
         <i class="fa-solid fa-arrow-left"></i> Volver al Menú
       </button>
-
       <div class="content-box">
-
-        <h2>
-          <i class="fa-solid fa-calendar-days"></i>
-          ¿Cuándo consultar a la Matrona?
-        </h2>
-
+        <h2><i class="fa-solid fa-calendar-days"></i> ¿Cuándo consultar a la Matrona?</h2>
         <p style="font-size: 0.88rem; margin-bottom: 1rem;">
           Exámenes preventivos y frecuencias según norma MINSAL:
         </p>
-
         <img
           src="./Consulta-Matrona.png"
           alt="Cuándo consultar a la matrona"
-          class="infografia-img">
-
+          class="infografia-img"
+          loading="eager"
+          decoding="async">
       </div>
     </div>
 
@@ -658,18 +836,16 @@
 
   <!-- PIE DE PÁGINA -->
   <footer>
-    <p>Internas Obstetricia y Puericultura, Universidad de Los Lagos 2026</p>
+    <p>
+      Interna Obstetricia y Puericultura,<br>
+      Rocío Melian, Loreto Estrada, Valentina Espinoza,<br>
+      Universidad Los Lagos 2026
+    </p>
   </footer>
 
-  <!-- FUNCIONES JAVASCRIPT -->
   <script>
-
-    // ==========================================
-    // NAVEGACIÓN ENTRE LAS SECCIONES
-    // ==========================================
-
+    /* NAVEGACIÓN ENTRE SECCIONES */
     function navigateTo(pageId) {
-
       const pages = document.querySelectorAll('.page-view');
 
       pages.forEach(page => {
@@ -680,102 +856,110 @@
 
       if (targetPage) {
         targetPage.classList.add('active');
-
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
-
-    // ==========================================
-    // GUARDADO AUTOMÁTICO DEL BOLSO DE PARTO
-    // ==========================================
-
+    /* GUARDADO AUTOMÁTICO DEL CHECKLIST */
     const STORAGE_KEY = 'consultaMatrona_bolsoParto_v1';
 
-
-    // Recuperar las casillas guardadas
-    function cargarChecklist() {
-
-      try {
-
-        const datosGuardados = localStorage.getItem(STORAGE_KEY);
-
-        if (!datosGuardados) {
-          return;
-        }
-
-        const estados = JSON.parse(datosGuardados);
-
-        document.querySelectorAll(
-          '.checklist-item input[type="checkbox"]'
-        ).forEach(checkbox => {
-
-          const identificador = checkbox.dataset.check;
-
-          if (identificador in estados) {
-            checkbox.checked = estados[identificador];
-          }
-
-        });
-
-      } catch (error) {
-
-        console.warn('No se pudieron recuperar las casillas guardadas:', error);
-
-      }
+    function obtenerCasillas() {
+      return document.querySelectorAll('#lista-bolso input[type="checkbox"]');
     }
 
-
-    // Guardar automáticamente cada cambio
     function guardarChecklist() {
+      const estado = {};
 
-      try {
-
-        const estados = {};
-
-        document.querySelectorAll(
-          '.checklist-item input[type="checkbox"]'
-        ).forEach(checkbox => {
-
-          const identificador = checkbox.dataset.check;
-
-          estados[identificador] = checkbox.checked;
-
-        });
-
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify(estados)
-        );
-
-      } catch (error) {
-
-        console.warn('No se pudieron guardar las casillas:', error);
-
-      }
-    }
-
-
-    // Inicializar el guardado cuando carga la página
-    document.addEventListener('DOMContentLoaded', function() {
-
-      // Recuperar las marcas anteriores
-      cargarChecklist();
-
-      // Guardar cada vez que se marca o desmarca una casilla
-      document.querySelectorAll(
-        '.checklist-item input[type="checkbox"]'
-      ).forEach(checkbox => {
-
-        checkbox.addEventListener('change', guardarChecklist);
-
+      obtenerCasillas().forEach(casilla => {
+        estado[casilla.dataset.check] = casilla.checked;
       });
 
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+      } catch (error) {
+        console.warn('No fue posible guardar la lista en este navegador.', error);
+      }
+
+      actualizarProgreso();
+    }
+
+    function cargarChecklist() {
+      let estado = {};
+
+      try {
+        estado = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      } catch (error) {
+        estado = {};
+      }
+
+      obtenerCasillas().forEach(casilla => {
+        casilla.checked = estado[casilla.dataset.check] === true;
+      });
+
+      actualizarProgreso();
+    }
+
+    function actualizarProgreso() {
+      const casillas = Array.from(obtenerCasillas());
+      const marcadas = casillas.filter(casilla => casilla.checked).length;
+      const total = casillas.length;
+
+      const texto = document.getElementById('progreso-texto');
+      const barra = document.getElementById('progreso-barra');
+
+      if (texto) {
+        texto.textContent = `${marcadas} de ${total} listos`;
+      }
+
+      if (barra) {
+        const porcentaje = total > 0 ? (marcadas / total) * 100 : 0;
+        barra.style.width = `${porcentaje}%`;
+      }
+    }
+
+    function reiniciarChecklist() {
+      const confirmar = confirm('¿Quieres desmarcar todos los elementos de tu lista?');
+
+      if (!confirmar) return;
+
+      obtenerCasillas().forEach(casilla => {
+        casilla.checked = false;
+      });
+
+      guardarChecklist();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      cargarChecklist();
+
+      obtenerCasillas().forEach(casilla => {
+        casilla.addEventListener('change', guardarChecklist);
+      });
     });
 
+    /* PRE-CARGA DE IMÁGENES */
+    const imagenesParaPrecargar = [
+      './Alarma-Embarazo.jpg',
+      './Alarma-ginecologico.jpg',
+      './autoxeman-mama.png',
+      './Metodos-Cesfam.png',
+      './Cuidados-recomendaciones.jpg',
+      './Recien-Nacido.png',
+      './Consulta-Matrona.png'
+    ];
+
+    function precargarImagenes() {
+      imagenesParaPrecargar.forEach(ruta => {
+        const imagen = new Image();
+        imagen.src = ruta;
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', precargarImagenes);
+    } else {
+      precargarImagenes();
+    }
   </script>
 
 </body>
