@@ -292,37 +292,6 @@
       border: 0;
     }
 
-    /* ALERTAS Y TARJETAS DE CUIDADOS */
-    .alert-card {
-      background-color: #ffebee;
-      border-left: 5px solid #d32f2f;
-      padding: 1rem;
-      border-radius: 10px;
-      margin-bottom: 0.9rem;
-      width: 100%;
-    }
-
-    .alert-card h4 {
-      color: #c62828;
-      font-size: 0.95rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .care-card {
-      background-color: #fce4ec;
-      border-left: 5px solid var(--rosa-mexicano);
-      padding: 1rem;
-      border-radius: 10px;
-      margin-bottom: 0.9rem;
-      width: 100%;
-    }
-
-    .care-card h4 {
-      color: var(--rosa-mexicano-dark);
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
-    }
-
     /* TABLAS RESPONSIVAS PC Y MÓVIL */
     .table-container {
       width: 100%;
@@ -535,78 +504,30 @@
       </div>
     </div>
 
-    <!-- VISTA 3: SIGNOS DE ALARMA EMBARAZO -->
+    <!-- VISTA 3: SIGNOS DE ALARMA EMBARAZO (INFOGRAFÍA HD) -->
     <div id="view-alarma-embarazo" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
-        <h2><i class="fa-solid fa-triangle-exclamation"></i> Alarma en el Embarazo</h2>
-        <p style="margin-bottom: 0.8rem; font-size: 0.88rem;">Si presentas alguno de estos síntomas, acude de inmediato a Urgencia Maternidad:</p>
-        
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-droplet"></i> Sangrado Vaginal</h4>
-          <p style="font-size: 0.85rem;">Cualquier pérdida de sangre por vagina, abundante o escasa, debe ser evaluada.</p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-water"></i> Pérdida de Líquido por Vagina</h4>
-          <p style="font-size: 0.85rem;">Salida de líquido transparente o con mal olor (posible rotura de bolsa de aguas).</p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-head-side-virus"></i> Dolor de Cabeza / Visión Borrosa</h4>
-          <p style="font-size: 0.85rem;">Cefalea intensa, ver luces/chispas o pitos en los oídos (relacionado con presión alta).</p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-child"></i> Menos Movimientos Fetales</h4>
-          <p style="font-size: 0.85rem;">Si notas que tu bebé se mueve significativamente menos tras las 28 semanas.</p>
-        </div>
+        <h2><i class="fa-solid fa-triangle-exclamation"></i> Signos de Alarma en el Embarazo</h2>
+        <img src="Signos-de-alarma-en-el-embarazo.jpg" alt="Signos de Alarma en el Embarazo - Red APS Osorno" class="infografia-img">
       </div>
     </div>
 
-    <!-- VISTA 4: SIGNOS DE ALARMA GINECOLÓGICOS -->
+    <!-- VISTA 4: SIGNOS DE ALARMA GINECOLÓGICOS (INFOGRAFÍA HD) -->
     <div id="view-alarma-ginecologia" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
-        <h2><i class="fa-solid fa-user-doctor"></i> Alarma Ginecológicos</h2>
-        
-        <div style="background-color: #ffebee; border: 2px solid #d32f2f; color: #b71c1c; padding: 0.85rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.88rem; font-weight: 600; text-align: center;">
-          <i class="fa-solid fa-triangle-exclamation"></i> Si presentas alguno de estos signos, debes pedir hora o acudir a tu matrona de tu centro de salud de manera urgente.
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-droplet"></i> Sangrado Anormal o Posmenopáusico</h4>
-          <p style="font-size: 0.85rem;">Sangrados fuera del ciclo, muy abundantes o tras la menopausia.</p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-align-center"></i> Dolor Pélvico Agudo</h4>
-          <p style="font-size: 0.85rem;">Dolor bajo vientre severo o repentino que no cede con analgésicos.</p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-bacteria"></i> Flujo Vaginal Atípico</h4>
-          <p style="font-size: 0.85rem;">Flujo con mal olor, verdoso/amarillento, con picazón intensa o ardor.</p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-circle-exclamation"></i> Alteraciones en las Mamas</h4>
-          <p style="font-size: 0.85rem;">Bultos o bultitos, secreción de sangre por pezón o enrojecimiento de la piel.</p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-capsules"></i> Complicaciones con Anticonceptivos</h4>
-          <p style="font-size: 0.85rem;">Dolor severo tras colocación de DIU o infección en la zona del implante.</p>
-        </div>
+        <h2><i class="fa-solid fa-user-doctor"></i> Signos de Alarma Ginecológicos</h2>
+        <img src="Signos-de-Alarma-Ginecologicos.jpg" alt="Signos de Alarma Ginecológicos - Red APS Osorno" class="infografia-img">
       </div>
     </div>
 
-    <!-- VISTA 5: AUTOEXAMEN DE MAMAS -->
+    <!-- VISTA 5: AUTOEXAMEN DE MAMAS (INFOGRAFÍA HD) -->
     <div id="view-mamas" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-ribbon"></i> Autoexamen de Mamas</h2>
-        <img src="autoexamen-mamas.jpg.png" alt="Infografía Autoexamen de Mamas - Universidad de Los Lagos" class="infografia-img">
+        <img src="Guia-visual-del-autoexamen-mamario.jpg" alt="Infografía Autoexamen de Mamas - Universidad de Los Lagos" class="infografia-img">
       </div>
     </div>
 
@@ -662,50 +583,21 @@
       </div>
     </div>
 
-    <!-- VISTA 7: CUIDADOS POST-PROCEDIMIENTOS -->
+    <!-- VISTA 7: CUIDADOS Y RECOMENDACIONES (INFOGRAFÍA HD) -->
     <div id="view-cuidados" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-notes-medical"></i> Cuidados y Recomendaciones</h2>
-        <p style="font-size: 0.88rem; margin-bottom: 0.8rem;">Indicaciones para procedimientos frecuentes:</p>
-
-        <div class="care-card">
-          <h4><i class="fa-solid fa-syringe"></i> Post-Inserción de Implante</h4>
-          <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.5;">
-            <li>Mantener el parche seco por 24 a 48 horas.</li>
-            <li>No levantar objetos pesados con ese brazo por 2 días.</li>
-            <li>Es normal la aparición de un pequeño moretón.</li>
-            <li>Consultar si hay enrojecimiento severo, pus o dolor punzante.</li>
-          </ul>
-        </div>
-
-        <div class="care-card">
-          <h4><i class="fa-solid fa-ring"></i> Post-Inserción de DIU T de Cobre</h4>
-          <p style="font-size: 0.85rem; line-height: 1.5;">
-            • Evitar relaciones con penetración y tampones por 7 días.<br>
-            • Es normal sentir cólicos leves los primeros días.<br>
-            • Controlar presencia de hilos tras tu primera regla.<br>
-            • Consultar si hay fiebre, dolor intenso o flujo con mal olor.
-          </p>
-        </div>
-
-        <div class="care-card">
-          <h4><i class="fa-solid fa-heart-pulse"></i> Cuidados Posparto / Puerperio</h4>
-          <p style="font-size: 0.85rem; line-height: 1.5;">
-            • <strong>Herida operatoria:</strong> Lavar sólo con agua y jabón neutro, secar con toques suaves.<br>
-            • <strong>Loquios:</strong> Sangrado disminuye progresivamente. Usar toallas de maternidad.<br>
-            • Acudir a control de puerperio a los 7-10 días.
-          </p>
-        </div>
+        <img src="Cuidados-Maternos-en-Rosa.jpg" alt="Cuidados Maternos y Recomendaciones - Red APS Osorno" class="infografia-img">
       </div>
     </div>
 
-    <!-- VISTA 8: CUIDADOS DEL RECIÉN NACIDO (NUEVA INFOGRAFÍA CARGADA) -->
+    <!-- VISTA 8: CUIDADOS DEL RECIÉN NACIDO (INFOGRAFÍA HD) -->
     <div id="view-rn" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-baby-carriage"></i> Cuidados del Recién Nacido</h2>
-        <img src="Cuidados-RN.jpg" alt="Infografía Cuidados del Recién Nacido - Universidad de Los Lagos" class="infografia-img">
+        <img src="Guia-de-cuidados-del-recien-nacido.jpg" alt="Infografía Cuidados del Recién Nacido - Universidad de Los Lagos" class="infografia-img">
       </div>
     </div>
 
@@ -776,16 +668,19 @@
       }
     }
 
-    // Registro del Service Worker para Guardado en Caché Off-line (incluye la nueva imagen)
+    // Registro del Service Worker para Guardado en Caché Off-line (incluye todas las infografías actualizadas)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         const swCode = `
-          const CACHE_NAME = 'matrona-app-v2';
+          const CACHE_NAME = 'matrona-app-v3';
           const urlsToCache = [
             './',
             './index.html',
-            './autoexamen-mamas.jpg.png',
-            './Cuidados-RN.jpg',
+            './Signos-de-alarma-en-el-embarazo.jpg',
+            './Signos-de-Alarma-Ginecologicos.jpg',
+            './Guia-visual-del-autoexamen-mamario.jpg',
+            './Cuidados-Maternos-en-Rosa.jpg',
+            './Guia-de-cuidados-del-recien-nacido.jpg',
             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
             'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'
           ];
