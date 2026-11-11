@@ -98,7 +98,7 @@
     main {
       flex: 1;
       width: 100%;
-      max-width: 900px; /* Ancho cómodo para pantallas de PC/Tablet */
+      max-width: 900px;
       margin: 0 auto;
       padding: 1.2rem 1rem;
     }
@@ -119,19 +119,17 @@
     /* DETECCIÓN AUTOMÁTICA DE PANTALLA PARA EL MENÚ */
     .menu-grid {
       display: grid;
-      grid-template-columns: 1fr; /* 1 Columna en celulares */
+      grid-template-columns: 1fr;
       gap: 1rem;
       width: 100%;
     }
 
-    /* En Tablets y Computadores cambia automáticamente a 2 Columnas */
     @media (min-width: 640px) {
       .menu-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* En Pantallas grandes de PC cambia a 3 Columnas si se desea */
     @media (min-width: 1024px) {
       main {
         max-width: 1100px;
@@ -241,7 +239,7 @@
     /* IMAGEN RESPONSIVA (CELULAR Y PC) */
     .infografia-img {
       width: 100%;
-      max-width: 650px; /* Evita que en PC se vuelva absurdamente gigante */
+      max-width: 650px;
       height: auto;
       border-radius: 12px;
       display: block;
@@ -408,7 +406,7 @@
   </header>
 
   <main>
-    <!-- VISTA 0: MENÚ PRINCIPAL (MÓVIL 1 COLUMNA / PC 2 O 3 COLUMNAS) -->
+    <!-- VISTA 0: MENÚ PRINCIPAL -->
     <div id="view-menu" class="page-view active">
       <div class="menu-grid">
 
@@ -480,7 +478,7 @@
           <div class="icon-box"><i class="fa-solid fa-baby-carriage"></i></div>
           <div class="menu-card-info">
             <h3>Cuidados del Recién Nacido</h3>
-            <p>Cordón umbilical, sueño seguro, aseo y signos de alerta.</p>
+            <p>Infografía sobre alimentación, uñas, sueño y alertas.</p>
           </div>
         </div>
 
@@ -603,12 +601,11 @@
       </div>
     </div>
 
-    <!-- VISTA 5: AUTOEXAMEN DE MAMAS (IMAGEN RESPONSIVA ADAPTADA) -->
+    <!-- VISTA 5: AUTOEXAMEN DE MAMAS -->
     <div id="view-mamas" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-ribbon"></i> Autoexamen de Mamas</h2>
-        <!-- Imagen que escala de 0 a 650px automáticamente -->
         <img src="autoexamen-mamas.jpg.png" alt="Infografía Autoexamen de Mamas - Universidad de Los Lagos" class="infografia-img">
       </div>
     </div>
@@ -703,46 +700,12 @@
       </div>
     </div>
 
-    <!-- VISTA 8: CUIDADOS DEL RECIÉN NACIDO -->
+    <!-- VISTA 8: CUIDADOS DEL RECIÉN NACIDO (NUEVA INFOGRAFÍA CARGADA) -->
     <div id="view-rn" class="page-view">
       <button class="btn-back" onclick="navigateTo('view-menu')"><i class="fa-solid fa-arrow-left"></i> Volver al Menú</button>
       <div class="content-box">
         <h2><i class="fa-solid fa-baby-carriage"></i> Cuidados del Recién Nacido</h2>
-        <p style="font-size: 0.88rem; margin-bottom: 0.8rem;">Recomendaciones esenciales para los primeros días de vida:</p>
-
-        <div class="care-card">
-          <h4><i class="fa-solid fa-droplet"></i> Cuidado del Cordón Umbilical</h4>
-          <p style="font-size: 0.85rem; line-height: 1.5;">
-            • Limpiar la base del cordón en cada muda con gasa y alcohol al 70%.<br>
-            • Dejar secar al aire y colocar el pañal por debajo del cordón para evitar roce y humedad.<br>
-            • Cae espontáneamente entre los 7 a 14 días.
-          </p>
-        </div>
-
-        <div class="care-card">
-          <h4><i class="fa-solid fa-bed"></i> Sueño Seguro</h4>
-          <p style="font-size: 0.85rem; line-height: 1.5;">
-            • Acostar al bebé siempre de espalda (boca arriba).<br>
-            • Usar colchón firme, sin almohadas, peluches o cobertores pesados.<br>
-            • Mantener la habitación a temperatura agradable y libre de humo de cigarro.
-          </p>
-        </div>
-
-        <div class="care-card">
-          <h4><i class="fa-solid fa-bath"></i> Aseo y Baño</h4>
-          <p style="font-size: 0.85rem; line-height: 1.5;">
-            • Baño corto con agua tibia (36-37°C) y jabón neutro.<br>
-            • Realizar muda frecuente para prevenir dermatitis del pañal.<br>
-            • Limpiar de adelante hacia atrás en las niñas.
-          </p>
-        </div>
-
-        <div class="alert-card">
-          <h4><i class="fa-solid fa-triangle-exclamation"></i> Signos de Alerta en el Recién Nacido</h4>
-          <p style="font-size: 0.85rem; line-height: 1.5;">
-            Acude de urgencia si presenta: <strong>Fiebre</strong> (37.5°C o más), <strong>color amarillo de la piel</strong> que llega a las piernas, rechazo de las tomas/lactancia, somnolencia extrema (no despierta) o secreción con mal olor/enrojecimiento en el cordón.
-          </p>
-        </div>
+        <img src="Cuidados-RN.jpg" alt="Infografía Cuidados del Recién Nacido - Universidad de Los Lagos" class="infografia-img">
       </div>
     </div>
 
@@ -802,7 +765,6 @@
 
   <!-- LÓGICA DE NAVEGACIÓN INSTANTÁNEA (SPA) + SERVICE WORKER CACHÉ -->
   <script>
-    // 1. Lógica de cambio de vistas
     function navigateTo(pageId) {
       const pages = document.querySelectorAll('.page-view');
       pages.forEach(page => page.classList.remove('active'));
@@ -814,15 +776,16 @@
       }
     }
 
-    // 2. Registro del Service Worker para Guardado en Caché Off-line
+    // Registro del Service Worker para Guardado en Caché Off-line (incluye la nueva imagen)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         const swCode = `
-          const CACHE_NAME = 'matrona-app-v1';
+          const CACHE_NAME = 'matrona-app-v2';
           const urlsToCache = [
             './',
             './index.html',
             './autoexamen-mamas.jpg.png',
+            './Cuidados-RN.jpg',
             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
             'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'
           ];
